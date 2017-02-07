@@ -1,0 +1,46 @@
+<div class="container">
+<h1>A Look Into the API</h1>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>Click below to see a list of available genres</h3>
+			<button class="btn btn-default" ng-click="getGenres()">Get Genres</button>
+			<div ng-repeat="genre in genres">
+				<h2>{{genre.name}}</h2>
+				<button id="{{genre.name}}" ng-click="getSongs()">See all {{genre.name}} songs</button>
+			</div>
+			<div class="col-md-4">
+			<h3>Click to see all available songs</h3>
+			<button ng-click="getSongs()">Get Songs</button>
+				<div ng-repeat="song in songs">
+					<p>{{song.name}}</p>
+					<a href="{{song.artist}}">See Artist</a>
+					<a href="{{song.album}}">See Album</a>
+					<a href="{{song.genre}}">See Genre</a>
+					<p>{{song.year_released}}</p>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>Click to see all available Albums</h3>
+			<button ng-click="getAlbums()">Get Albums</button>
+			<div ng-repeat="album in albums">
+				<p>{{album.title}}</p>
+				<a href="{{album.artist}}">See Artist</a>
+				<a href="{{album.genre}}">See Genre</a>
+				<p>{{album.year_released}}</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h3>Click here to see all available Artists</h3>
+			<button ng-click="getArtists()">Get Artists</button>
+			<div ng-repeat="artist in artists">
+				<p>Name: {{artist.name}}</p>
+				<p>Birthplace: {{artist.hometown}}</p>
+				<p>About: {{artist.description}}</p>
+				<a href="{{artist.genre}}">See Genre</a>
+			</div>
+		</div>
+	</div>
+</div>
